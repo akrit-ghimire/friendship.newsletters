@@ -1,0 +1,620 @@
+:root {
+    /* Modern 2020s Color Palette */
+    --primary: #4f46e5;         
+    --primary-hover: #4338ca;   
+    --bg-color: #f9fafb;        
+    --surface: #ffffff;         
+    --text-main: #1f2937;       
+    --text-muted: #6b7280;      
+    
+    /* Modern subtle shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+html, body {
+    font-size: 16px;
+    background-color: var(--bg-color);
+    background-image: url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+a:hover, a.active {
+    color: var(--primary);
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: var(--surface);
+    padding: 1.25rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-sm);
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+nav .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.02em;
+}
+
+nav .links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* --- Main Layout --- */
+main {
+    flex: 1; 
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- About Page Styles --- */
+/* Hero Section */
+.hero-about {
+    text-align: center;
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: white;
+    width: 100%;
+}
+
+.hero-about h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+
+/* Timeline */
+.timeline-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    border-left: 2px solid var(--primary);
+    padding-left: 2rem;
+}
+
+.event { margin-bottom: 2rem; position: relative; }
+.event span { font-weight: 800; color: var(--primary); display: block; }
+
+/* HQ Pin */
+.hq { text-align: center; margin: 4rem 0; }
+.map-pin { font-size: 2rem; color: #ef4444; margin-bottom: 1rem; }
+
+/* Pricing Box */
+.quote-box {
+    background: #f3f4f6;
+    padding: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto;
+    border: 2px dashed var(--primary);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 4rem auto;
+}
+
+.team-section {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.team-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* This grid auto-adjusts based on screen size (mobile friendly!) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.team-card {
+    background-color: var(--surface);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* Makes the card "lift" when hovered */
+    box-shadow: var(--shadow-lg);
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    background-color: #e5e7eb; /* Placeholder color */
+}
+
+/* Dummy colors for avatars until you add real images */
+.placeholder-1 { background-color: #fca5a5; }
+.placeholder-2 { background-color: #93c5fd; }
+.placeholder-3 { background-color: #a7f3d0; }
+
+.team-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.team-card .role {
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.team-card .bio {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Privacy Policy Document Styles --- */
+.legal-main {
+    align-items: center; /* Centers the document container */
+    padding: 3rem 5%;
+}
+
+.document-container {
+    background-color: var(--surface);
+    max-width: 800px; /* Constrains line length for easy reading */
+    width: 100%;
+    padding: 4rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.document-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.document-container .last-updated {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+}
+
+.document-container h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-main);
+}
+
+.document-container p {
+    color: var(--text-muted);
+    line-height: 1.8; /* High line-height makes long text easy to read */
+    margin-bottom: 1.25rem;
+}
+
+.document-container ul {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    padding-left: 1.5rem;
+}
+
+.document-container li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--surface);
+    padding: 2rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+footer .footer-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer .copyright {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* --- Responsive Tweaks for small phones --- */
+@media (max-width: 600px) {
+    .document-container {
+        padding: 2rem;
+    }
+}
+
+/* --- Contact Page Styles --- */
+.contact-main {
+    padding: 3rem 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-container {
+    background-color: var(--surface);
+    max-width: 600px;
+    width: 100%;
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-header h1 {
+    font-size: 2rem;
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+}
+
+.contact-header p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* --- Form Styling --- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: var(--text-main);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Make sure the massive select menu looks good */
+.form-group select {
+    cursor: pointer;
+    appearance: auto; /* Keeps default dropdown arrow but styles the box */
+}
+
+/* Focus states for accessibility and modern feel */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2); /* Soft primary color glow */
+}
+
+.form-group textarea {
+    resize: vertical; /* Allows users to drag the text box down, but not sideways */
+}
+
+.submit-btn {
+    background-color: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.submit-btn:active {
+    transform: scale(0.98); /* Slight click effect */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* --- Thank You / Queue Page Styles --- */
+.queue-status {
+    margin: 2.5rem 0;
+    padding: 2.5rem 1rem;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.queue-number {
+    font-size: 4rem; /* Massive text size */
+    color: var(--primary);
+    margin: 1rem 0;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+}
+
+.queue-subtext {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.return-btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+}
+
+/* --- Reviews Page Styles --- */
+.reviews-main {
+    padding: 4rem 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reviews-header {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 4rem;
+}
+
+.reviews-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+.reviews-header p {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* Feed layout constraints */
+.reviews-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Individual Review Card */
+.review-card {
+    background-color: var(--surface);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #f3f4f6;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Meta section: Avatar, Name, Stars */
+.review-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* Modern Initial Avatars */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Variety of startup pastel/vibrant colors for the avatars */
+.bg-pink { background-color: #ec4899; }
+.bg-blue { background-color: #3b82f6; }
+.bg-green { background-color: #10b981; }
+.bg-yellow { background-color: #eab308; }
+.bg-purple { background-color: #8b5cf6; }
+.bg-orange { background-color: #f97316; }
+.bg-teal { background-color: #14b8a6; }
+.bg-red { background-color: #ef4444; }
+.bg-indigo { background-color: #6366f1; }
+.bg-gray { background-color: #6b7280; }
+
+.meta-text {
+    flex: 1;
+}
+
+.meta-text h3 {
+    font-size: 1.125rem;
+    color: var(--text-main);
+    margin-bottom: 0.2rem;
+}
+
+.meta-text .group-name {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.stars {
+    color: #fbbf24; /* Classic gold star color */
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+/* Review Text Content */
+.review-quote {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.review-explainer {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+    .review-card {
+        padding: 1.5rem;
+    }
+    
+    .stars {
+        width: 100%; /* Pushes stars to their own line on very small screens */
+    }
+}
+
+
+/* Ensure the preview image fills the upload zone completely */
+#imagePreview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This makes the image fill the area without distorting */
+    border-radius: 0.35rem;
+    display: none; /* Hidden by default */
+}
+
+/* Adjust upload-zone padding so the image fits flush */
+.upload-zone {
+    position: relative;
+    padding: 0; /* Remove padding so the image can take up 100% of the space */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image doesn't bleed out of the rounded corners */
+    border: 2px dashed #d1d5db;
+    border-radius: 0.5rem;
+    color: var(--text-muted);
+    background-color: #f9fafb;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    gap: 0.5rem;
+}
+
+.upload-zone:hover {
+    border-color: var(--primary);
+    background-color: #f0f1ff;
+    color: var(--primary);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.goofy-loader {
+    width: 60px;
+    height: 60px;
+    border: 8px solid #e5e7eb; /* Light grey */
+    border-top: 8px solid var(--primary); /* Your site color */
+    border-radius: 50%;
+    animation: spin-and-wobble 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+@keyframes spin-and-wobble {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.2); } /* Wobble/Grow */
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.loading-status {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}

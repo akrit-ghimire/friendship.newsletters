@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Your Update | Friendship Newsletters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">FriendshipNewsletters</a>
+        <div class="links">
+            <a href="index.html">About</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </nav>
+
+    <main class="contact-main" id="loading">
+        <div class="contact-container" style="text-align: center;">
+            <div id="loaderContainer" class="loader-wrapper">
+                <div class="goofy-loader"></div>
+                <p id="loadingText" class="loading-status">Syncing your vibe...</p>
+            </div>
+        </div>
+
+        <script>
+            const loadingTexts = [
+                "Analyzing your aesthetic assets...",
+                "Calculating friendship ROI...",
+                "Cross-referencing your social worth...",
+                "Consulting the hivemind...",
+                "Formatting your life-narrative...",
+                "Almost there... the void is ready."
+            ];
+
+            const textElement = document.getElementById('loadingText');
+            let index = 0;
+
+            setInterval(() => {
+                index = (index + 1) % loadingTexts.length;
+                textElement.innerText = loadingTexts[index];
+            }, 1500); // Change text every 1.5 seconds
+        </script>
+    </main>
+
+    <main class="contact-main" style="display: none;" id="screen_message">
+        <div class="contact-container" style="text-align: center;">
+            <div class="contact-header">
+                <h1 id="screen_message_title"></h1>
+                <p id="screen_message_desc"></p>
+            </div>
+        </div>
+    </main>
+
+    <main class="contact-main" style="display: none;" id="form">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Submit Your Monthly Update</h1>
+                <p>Provide your curated life-narrative below. Our editorial algorithms are standing by.</p>
+            </div>
+
+            <form id="submitForm" class="contact-form">
+                <div class="form-group">
+                    <label>Upload Photo of the Month</label>
+                    <div class="upload-zone" id="dropZone">
+                        <svg id="uploadIcon" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+
+                        <img id="imagePreview" src="#" alt="Preview" style="display: none; border-radius: 4px;">
+
+                        <p id="uploadText">Click to upload or drag & drop</p>
+                        <input type="file" id="fileInput" name="photo" class="sr-only" accept="image/*" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="caption">Photo Caption</label>
+                    <input type="text" id="caption" name="caption" placeholder="A profound sentence about this photo..."
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="update">Your Monthly Update</label>
+                    <textarea id="update" name="update" rows="10"
+                        placeholder="Please type your update here..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 FriendshipNewsletters</p>
+    </footer>
+</body>
+
+</html>

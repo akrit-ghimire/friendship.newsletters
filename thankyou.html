@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Received | Friendship Newsletters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FriendshipNewsletters</a>
+        <div class="links">
+            <a href="index.html">About</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </nav>
+    
+    <main class="contact-main">
+        <div class="contact-container" style="text-align: center;">
+            <div class="contact-header">
+                <h1>Thank You.</h1>
+                <p>Your request has been successfully transmitted to our automated support routing facility. We will add you to the queue. We are currently short staffed and have only one customer care officer for over 5 Billion users.</p>
+            </div>
+
+            <div class="queue-status">
+                <p>Your current position in the queue is:</p>
+                <h2 id="queueNumber" class="queue-number">Calculating...</h2>
+                <p class="queue-subtext">Please do not refresh this page. Doing so will forfeit your place in line.</p>
+            </div>
+
+            <a href="index.html" class="submit-btn return-btn">Return to Homepage</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 FriendshipNewsletters</p>
+    </footer>
+
+    <script>
+        // Wait just a tiny bit before showing the number to make it feel like it's "processing"
+        setTimeout(() => {
+            // Generate a massive random number between 100,000 and 999,999
+            const minQueue = 100000;
+            const maxQueue = 999999;
+            const randomQueueNumber = Math.floor(Math.random() * (maxQueue - minQueue + 1)) + minQueue;
+
+            // Format it with a comma (e.g., 142,837)
+            const formattedNumber = randomQueueNumber.toLocaleString();
+
+            // Inject it into the H2 tag
+            document.getElementById('queueNumber').innerText = formattedNumber;
+        }, 600); // 600 millisecond delay
+    </script>
+</body>
+</html>

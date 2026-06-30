@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Friendship Newsletters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">FriendshipNewsletters</a>
+        <div class="links">
+            <a href="index.html">About</a>
+            <a href="reviews.html">Reviews</a>
+        </div>
+    </nav>
+    
+    <main class="contact-main">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get in Touch</h1>
+                <p>Having an issue? We are here to help. Please fill out the form below with as much detail as possible, and our support team will get back to you.</p>
+            </div>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Account Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Topic of Inquiry</label>
+                    <select id="topic" name="topic" required>
+                        <option value="" disabled selected>-- Select an Issue --</option>
+                        <optgroup label="Account & Login">
+                            <option value="1">Forgot password</option>
+                            <option value="2">Account locked out</option>
+                            <option value="3">Two-factor authentication failing</option>
+                            <option value="4">Email change request</option>
+                            <option value="5">Delete account permanently</option>
+                            <option value="6">Recover deleted account</option>
+                            <option value="7">Account hijacked by friend</option>
+                            <option value="8">Cannot update profile picture</option>
+                            <option value="9">Name spelled wrong in settings</option>
+                            <option value="10">Session keeps timing out</option>
+                        </optgroup>
+                        <optgroup label="Newsletter Creation">
+                            <option value="11">Draft didn't save</option>
+                            <option value="12">Spellcheck isn't working</option>
+                            <option value="13">Cannot upload image</option>
+                            <option value="14">Image is sideways</option>
+                            <option value="15">Image is too large</option>
+                            <option value="16">Font changed randomly</option>
+                            <option value="17">Bullet points acting weird</option>
+                            <option value="18">Emojis turning into question marks</option>
+                            <option value="19">Accidentally deleted a paragraph</option>
+                            <option value="20">Character limit reached unexpectedly</option>
+                            <option value="21">Links aren't clickable</option>
+                            <option value="22">Formatting stripped upon pasting</option>
+                            <option value="23">HTML injection error</option>
+                            <option value="24">Preview looks different than editor</option>
+                        </optgroup>
+                        <optgroup label="Delivery & Sending">
+                            <option value="25">Newsletter sent twice</option>
+                            <option value="26">Newsletter didn't send at scheduled time</option>
+                            <option value="27">Went to everyone's spam folder</option>
+                            <option value="28">Sent to the wrong friend group</option>
+                            <option value="29">Accidentally replied all</option>
+                            <option value="30">Delivery receipt not updating</option>
+                            <option value="31">Subject line cut off</option>
+                            <option value="32">Attachments missing</option>
+                            <option value="33">Bounced emails</option>
+                            <option value="34">Unsubscribe link broken</option>
+                        </optgroup>
+                        <optgroup label="Friend Management">
+                            <option value="35">How to un-invite a friend subtly</option>
+                            <option value="36">Friend cannot join group</option>
+                            <option value="37">Friend claims they didn't get it (I know they did)</option>
+                            <option value="38">Block a former friend</option>
+                            <option value="39">Transfer ownership of friend group</option>
+                            <option value="40">Maximum friends limit reached</option>
+                            <option value="41">Friend keeps marking my emails as spam</option>
+                            <option value="42">Merge two friend groups</option>
+                        </optgroup>
+                        <optgroup label="Billing & Subscriptions">
+                            <option value="43">Double charged</option>
+                            <option value="44">Card declined</option>
+                            <option value="45">Need invoice for tax purposes</option>
+                            <option value="46">Refund request</option>
+                            <option value="47">Upgrade to premium</option>
+                            <option value="48">Cancel premium</option>
+                            <option value="49">Promo code invalid</option>
+                            <option value="50">Change billing cycle</option>
+                        </optgroup>
+                        <optgroup label="Legal & Privacy">
+                            <option value="51">Question about Terms of Service</option>
+                            <option value="52">Question about Privacy Policy</option>
+                            <option value="53">GDPR Data Request</option>
+                            <option value="54">CCPA Do Not Sell My Info</option>
+                            <option value="55">Report Copyright Infringement</option>
+                            <option value="56">Law enforcement inquiry</option>
+                            <option value="57">Report Terms of Service violation</option>
+                            <option value="58">My data appears in a search engine</option>
+                        </optgroup>
+                        <optgroup label="Technical & Bugs">
+                            <option value="59">Website loading slowly</option>
+                            <option value="60">500 Internal Server Error</option>
+                            <option value="61">404 Page Not Found</option>
+                            <option value="62">App crashes on mobile</option>
+                            <option value="63">Doesn't work on Internet Explorer</option>
+                            <option value="64">Dark mode is broken</option>
+                            <option value="65">Notifications won't clear</option>
+                            <option value="66">API rate limit exceeded</option>
+                            <option value="67">Accessibility/Screen reader issue</option>
+                            <option value="68">CAPTCHA is unsolvable</option>
+                        </optgroup>
+                        <optgroup label="General Feedback">
+                            <option value="69">Feature request</option>
+                            <option value="70">UI/UX complaint</option>
+                            <option value="71">Praise for the team</option>
+                            <option value="72">Media/PR inquiry</option>
+                            <option value="73">Partnership opportunity</option>
+                            <option value="74">Job inquiry</option>
+                        </optgroup>
+                        <optgroup label="Miscellaneous / Other">
+                            <option value="75">I forgot why I opened this page</option>
+                            <option value="76">Just wanted to say hi</option>
+                            <option value="77">Can you write my newsletter for me?</option>
+                            <option value="78">Other (Please specify in message)</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Please describe your issue in detail..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms</a>
+            <a href="contact.html" class="active">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 FriendshipNewsletters</p>
+    </footer>
+
+    <!-- Fake Form Submission Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Prevent the form from actually refreshing the page
+            event.preventDefault();
+
+            // Redirect the user to our beautifully unhelpful Thank You page
+            window.location.href = "thankyou.html";
+        });
+    </script>
+</body>
+</html>
